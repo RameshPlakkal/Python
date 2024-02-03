@@ -1,0 +1,50 @@
+from game_data import data
+from art import logo, vs
+import random
+# from replit import clear
+
+GAME_ON = True
+SCORE = 0
+
+
+def start_game():
+  """ Starts the game, takes user inputs, validates if user if correct and continues the game.
+  Exits the game if user is wrong.
+  """
+  global GAME_ON
+  global SCORE
+  
+  data_size = len(data)-1
+  print(data_size)
+
+  while GAME_ON:
+    selector1 = random.randint(0,data_size)     
+    print(f"Compare A: {data[selector1]['name']}, {data[selector1]['description']}, {data[selector1]['country']}")
+    A = data[selector1]['follower_count']
+    print(A)
+  
+    print(vs)
+    
+    selector2 = random.randint(0,data_size)   
+    print(f"Against B: {data[selector2]['name']}, {data[selector2]['description']}, {data[selector2]['country']}")
+    B = data[selector2]['follower_count']
+    print(B)
+
+    user_input = input("Who has more followers? Type 'A' or 'B' : ")
+
+    if A > B:
+      SCORE += 1
+      print(f"You're right! Current score: {SCORE}")
+      start_game()
+    elif B > A:
+      SCORE +=1
+      print(f"You're right! Current score: {SCORE}")
+      start_game()
+    else:
+      print(f"Sorry, that's wrong. Final score: {SCORE}")
+      GAME_ON = False
+      
+
+
+print(logo)
+start_game()
