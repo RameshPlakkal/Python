@@ -5,8 +5,8 @@ import pandas as pd
 import os
 
 # ---------------- Constants ---------------------------------- #
-MY_EMAIL = "ramesh.plakkal@gmail.com"
-APP_PASSWORD = "ludolplzrborsrqr"
+MY_EMAIL = "" # email to be populated before use
+APP_PASSWORD = "" # password to be setup before use
 HOST = "smtp.gmail.com"
 SUBJECT = "Happy Birthday"
 TODAY = dt.datetime.now()
